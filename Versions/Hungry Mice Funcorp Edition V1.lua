@@ -1,5 +1,4 @@
 ---Hungry Mice v1
-
 local TFM = tfm.exec
 local GET = tfm.get
 local room = GET.room
@@ -170,22 +169,24 @@ local langue = {
         details_food_type6 = "The rarest food ever!\nMakes your mouse grow faster!",
         details_food_type7 = "Stops everyone for a second!\n And makes them dance!!",
 
-        help = "Help",
-        credits = "Credits",
+        help     = "Help",
+        credits  = "Credits",
         commands = "Commands",
-        news = "News",
-        help_help = "<p align='center'><B>Welcome to <V>Hungry Mice</V>!</B></p>\n<font color='#ffd991'><B>How can I play this module?</B></font>\nYour goal is to get bigger by eating the foods on the ground and after 30 secounds the mice can eat each others by press <font color='#ffd991'>SPACE</font>, but they can only eat the mice which is smaller than them , the mouse which ate all the mice will win, or if the time's end the biggest one win!.\n\n<font color='#ffd991'><B>How can I know the types of food?</B></font>\n You can click on the cheese icon in the edge of screen or click <a href='event:cheeseMenu'><font color='#ffd991'>here</font></a>.",
-        help_credits = "<font size='12'>This module was made by <v>Noooooooorr</v></font><g><font size='9'>#0000</font><</g>\n\n<font size='12'><font color='#ffd991'><B>Translated by:</B></font>",
+        news     = "News",
+
+        help_help     = "<p align='center'><B>Welcome to <V>Hungry Mice</V>!</B></p>\n<font color='#ffd991'><B>How can I play this module?</B></font>\nYour goal is to get bigger by eating the foods on the ground and after 30 secounds the mice can eat each others by press <font color='#ffd991'>SPACE</font>, but they can only eat the mice which is smaller than them , the mouse which eats all the mice will win, or if the time's end the biggest one win!.\n\n<font color='#ffd991'><B>How can I know the types of food?</B></font>\n You can click on the cheese icon in the edge of screen or click <a href='event:cheeseMenu'><font color='#ffd991'>here</font></a> or type <font color='#ffd991'>!foods.</font>",
+        help_credits  = "<font size='12'>This module was made by <v>Noooooooorr</v></font><g><font size='9'>#0000</font><</g>\n\n<font size='12'><font color='#ffd991'><B>Translated by:</B></font>",
         help_commands = "\n<font color='#ffd991'><B>Available commands:</B></font>\n • <v>!profile</v> or <v>!p</v> <g>[playerName]</g> : shows playerName's profile.\n • <v>!lang</v> <g>[langID]</g> : changes the module language.\n • <v>!help</v> or <v>!h</v> : opens the help menu. \n\n<font color='#ffd991'><B>Keyboard Shortcuts:</B></font>\n• <v>P</v> : shows your profile. \n• <v>H</v> : opens the help menu.",
-        wins = "Wins : %s",
-        rounds = "Rounds : %s",
+
+        wins      = "Wins : %s",
+        rounds    = "Rounds : %s",
         eatenMice = "Eaten mice : %s",
 
-        points = "<rose> To change the your Nickname Color , you must win 2 rounds. \n • To change the your Nickname , you must win 5 rounds.</rose>",
-        colorNick = "Nickname Color",
-        changenick = "Change Nickname",
+        points      = "<rose> To change the your Nickname Color , you must win 2 rounds. \n • To change the your Nickname , you must win 5 rounds.</rose>",
+        colorNick   = "Nickname Color",
+        changenick  = "Change Nickname",
         chosencolor = "<fc>[•] Your nickname color will change to <font color='#%s'>#%s</font> in the next round.</fc>",
-        chosenName = "<fc>[•] Your nickname will change to <r><b>%s</b></r> in the next round.</fc>",
+        chosenName  = "<fc>[•] Your nickname will change to <r><b>%s</b></r> in the next round.</fc>",
         waitAMoment = "<fc>[•] You must wait %s seconds to request again",
     },
 }
@@ -883,7 +884,6 @@ function eventNewPlayer(name)
     end
     updateSize(name,p[name].size)
     TFM.setPlayerScore(name,0)
-    print("<FC>"..string.name(name).."<FC> Community :<J>"..p[name].langue)
     if module.lobby then
         TFM.respawnPlayer(name)
     end
@@ -912,7 +912,7 @@ function eventChatCommand(name, mes)
             else
                 TFM.chatMessage("<R>[•] The module doesn't support this language.</R>", name)
             end
-        else
+        elseif #cmd[2] > 2 then 
             TFM.chatMessage("<R>[•] You should only type the language id only\nEX: <V> !lang <J>en</J></R>", name)
         end
     elseif cmd[1] == "help" or cmd[1] == "h" then
@@ -928,7 +928,7 @@ function eventChatCommand(name, mes)
             end
         end
     elseif cmd[1] == "msg" and isAdmin(name) then
-        TFM.chatMessage("<n> "..mes:sub(4).." <fc>["..string.name(name).."] • </fc>")
+        TFM.chatMessage("<fc> • ["..string.name(name).."]</fc><n> "..mes:sub(4))
     elseif cmd[1] == "map" and isAdmin(name) then
         setMap()
     end
@@ -936,7 +936,6 @@ end
 
 function isAdmin(name)
     for _,admin in next, module.admins do
-        print(admin)
         if admin == name then
             return true
         end
