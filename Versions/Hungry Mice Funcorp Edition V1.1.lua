@@ -1162,7 +1162,7 @@ function eventColorPicked(id, name, color)
                 TFM.chatMessage(string.format(translate("waitAMoment", name), seconds), name)
             end
         else
-            TFM.chatMessage("<R><b>[HungryMice]</b> ERROR.<ُ/R>")
+            TFM.chatMessage("<R><b>[HungryMice]</b> ERROR.<ُ/R>", name)
         end
     end
 end
