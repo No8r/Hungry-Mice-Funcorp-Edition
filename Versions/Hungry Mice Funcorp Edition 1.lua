@@ -1,4 +1,4 @@
----Hungry Mice v1
+---Hungry Mice v1.0.0
 local TFM = tfm.exec
 local GET = tfm.get
 local room = GET.room
