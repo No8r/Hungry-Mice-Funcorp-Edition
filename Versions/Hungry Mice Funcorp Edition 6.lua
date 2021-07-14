@@ -25,7 +25,7 @@ local module = {
     lobby_map = [[<C><P MEDATA="1,1;;;;-0;0:::1-"/><Z><S><S T="0" X="0" Y="0" L="10" H="10" P="0,0,0.3,0.2,0,0,0,0" i="5,5,177bc42833e.png"/><S T="14" X="401" Y="425" L="823" H="85" P="0,0,0.3,0.2,0,0,0,0"/><S T="14" X="-42" Y="313" L="823" H="85" P="0,0,0,0,-90,0,0,0"/><S T="14" X="843" Y="302" L="823" H="85" P="0,0,0,0,-90,0,0,0"/><S T="14" X="417" Y="-43" L="889" H="85" P="0,0,0,0,-180,0,0,0"/></S><D><DS X="399" Y="368"/></D><O/><L/></Z></C>]],
     commands = {"lang", "language", "map", "profile", "p", "help", "h", "msg", "foods", "admin"},
     names = {},
-    minium_player = 1 ,
+    minium_player = 5 ,
     max_player = 30 , 
     started = false , 
     stuff = {
@@ -131,36 +131,77 @@ local images = {
     },
     {"Skeleton", "1789e6b9058.png", 122.5, 170},
     {"Meli Mouse", "178cbf1ff84.png", 140, 180},
+
     {"Rabbit", "178a763048a.png", 105, 220},
     {"Deer", "1792c9cacd8.png", 136.5, 190},
     {"Kangaroo", "178a8fd60a4.png", 132.5, 190},
     {"Dora Mouse", "178ab77286f.png", 140, 190},
     {"Creepy Cupid", "178a8eedcd1.png", 161.5, 175},
     {"Skelaton Cat", "1792c9cd64e.png", 195, 180},
+
     {"Chicken", "1789e74c570.png", 135, 170},
     {"Scarecrow", "1789e83df76.png", 135, 170},
-    {"Fish", "17897d80b92.png", 50, 150},
+    {"Fish1", "17897d80b92.png", 50, 150},
+    {"Fish2", "17a6c73f36f.png", 100, 180},
+    {"Fish3", "17a2b11452f.png", 164.5, 180},
     {"Crazy SpongePop", "178a7684993.png", 143, 170},
+
     {"Patrick", "178a8cc2fa2.png", 113.5, 190},
     {"Tentacles", "178c0ae903f.png", 192, 190},
     {"Tentacles2", "178c1ea37d2.png", 140, 190},
     {"Spiderman", "1789d2c38cf.png", 74, 170},
+    {"Dancing Dora", "17a2b117411.png", 100, 180},
     {"Dora", "1789d45e0a4.png", 117, 170},
+
     {"Jerry", "17898047f7a.png", 92.5, 160},
     {"Triangle Jerry", "1789e5aece6.png", 150, 155},
     {"Standing Jerry", "1789e6216c4.png", 98, 170},
     {"Hungry Nibbbles", "1792c9c8635.png", 129.5, 180},
     {"Cardi b", "178a8c50903.png", 171.5, 180},
+    {"Confused Girl", "17a24638fe5.png", 122.5, 180},
+
+    {"Disgusted Boy", "17a2462dea9.png", 143, 180},
+    {"Yelling Girl", "17a2969f993.png", 110, 180},
     {"Meli", "178c1db92ce.png", 127.5, 180},
     {"Surprised Pikachu", "178c1dbc1b1.png", 174, 180},
     {"Surprised Cat", "178c1dbaa41.png", 175, 180},
     {"Seated Fox", "178f74e11bb.png", 101, 180},
-    {"Pro Cat", "1792c9c4b6b.png", 114.5, 180},
-    {"Garcello", "179d36c4ab3.png", 92.5, 180},
+    
     {"Hamster1", "179d3702e39.png", 100, 180},
     {"Hamster2", "179d3705de7.png", 140, 180},
     {"Hamster3", "179d3a777a5.png", 145, 180},
+    {"Hamster4", "17a2b118b83.png", 170, 180},
+    {"Haamster5", "17a6c73dbfd.png", 150, 180},
     {"Laughing guy", "179d3a6ea1e.png", 127.5, 180},
+
+    {"Pro Cat", "1792c9c4b6b.png", 114.5, 180},
+    {"Cute cat", "17a296a8bb0.png", 132.5, 180},
+    {"Rainbow Unicorn", "17a296e5244.png", 137, 180},
+    {"Sonickles", "17a297a663d.png", 172.5, 180},
+    {"Garcello", "179d36c4ab3.png", 92.5, 180},
+    {"Doge", "17a2b115ca3.png", 109, 180},
+
+    {"Mouse handle cheese", "17a86f5af88.png", 129.5, 180},
+    {"Hiii", "17a2b11ba68.png", 130, 180},
+    {"Angelena", "17a2b11d1d9.png", 145, 180},
+    {"Donkey (shrek)", "17a6c740adf.png", 93, 180},
+    {"Funny chicken", "17a6c742250.png", 135, 180},
+    {"Puppet Monkey", "17a6c7439c3.png", 156.5, 180},
+    
+    {"Puppet Monkey1", "17a6c7468a7.png", 161, 180},
+    {"Puppet Monkey2", "17a6c749789.png", 107.5, 180},
+    {"Kermit Frog", "17a6c74802b.png", 143.5, 180},
+    {"Shrek", "17a6c745137.png", 87.5, 180},
+    {"Henlo", "17a86f551c3.png", 50, 180},
+    {"Bongo Cat", "17a86f59814.png", 145, 110},
+    
+    {"Doja cat1", "17a867f8436.png", 95, 180},
+    {"Doja cat2", "17a86818aae.png", 112, 180},
+    {"Doja cat3", "17a867fb316.png", 114, 180},
+    {"Doja cat4", "17a86872509.png", 167.5, 180},
+    {"Ariana Grande", "17a86f580a4.png", 164, 180},
+    {"Drake", "17a2b11a2f6.png", 189.5, 180},
+
 }
 
 local langue = {
@@ -1934,7 +1975,7 @@ function eventPlayerLeft(name)
     inRoom = inRoom - 1
     checkLobby()
     if p[name] then
-        table.remove(p, name)
+        p[name] = nil
     end
 end
 
