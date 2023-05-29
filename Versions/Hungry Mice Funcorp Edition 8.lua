@@ -1676,17 +1676,17 @@ end
 
 function checkLobby()
     if module.lobby then 
-        if room.uniquePlayers >= module.minium_player then
+        if inRoom >= module.minium_player then
             if checklobbyT then system.removeTimer(checklobbyT) checklobbyT = nil end
             checklobbyT = system.newTimer(function() exitLobby() checklobbyT = nil end, 4000, false)
         else
             updatePlayersNumb()
-            if room.uniquePlayers < module.minium_player and not module.lobbymap then
+            if inRoom < module.minium_player and not module.lobbymap then
                 lobby()
             end
         end
     elseif not module.lobby then
-        if room.uniquePlayers < module.minium_player then
+        if inRoom < module.minium_player then
             if not room.isTribeHouse then 
                 lobby()
             end
