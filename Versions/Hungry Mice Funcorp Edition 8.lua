@@ -1687,9 +1687,9 @@ function checkLobby()
         end
     elseif not module.lobby then
         if inRoom < module.minium_player then
-            if not room.isTribeHouse then 
+            --if not room.isTribeHouse then 
                 lobby()
-            end
+            --end
         end
     end
 end
@@ -1697,14 +1697,14 @@ end
 function updatePlayersNumb()
     for name in next, room.playerList do
         if name and inRoom and translate("waitPlayers",name) then
-            addTextArea(900000,"<font size='22' color='#ffd991'><p align='center'><B>" .. translate("waitPlayers",name).."\n".. GET.room.uniquePlayers .. [[/]] .. module.minium_player, name, 815, 20, 625, 65, 0x01, 0x01, 0.5, false)
+            addTextArea(900000,"<font size='22' color='#ffd991'><p align='center'><B>" .. translate("waitPlayers",name).."\n".. inRoom .. [[/]] .. module.minium_player, name, 815, 20, 625, 65, 0x01, 0x01, 0.5, false)
         end
     end
 end
 
 function main()
     imgs.lobby = {}
-    if room.isTribeHouse then module.minium_player = 1 end
+    --if room.isTribeHouse then module.minium_player = 1 end
     setXpToLevelUP()
     for name in pairs(tfm.get.room.playerList) do
 		eventNewPlayer(name)
@@ -1712,9 +1712,9 @@ function main()
     for _,c in pairs(module.commands) do
 		system.disableChatCommandDisplay(c)
     end
-    if room.isTribeHouse then 
-        module.lobby = false
-    end
+    --if room.isTribeHouse then 
+    --    module.lobby = false
+    --end
     TFM.setRoomMaxPlayers(module.max_player)
 end
 
