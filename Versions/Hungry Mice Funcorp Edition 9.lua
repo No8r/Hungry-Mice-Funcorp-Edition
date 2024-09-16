@@ -2091,6 +2091,9 @@ function eventChatCommand(name, mes)
                 TFM.chatMessage(translate("changedLang",name), name)
                 if module.stuff.translators[cmd[2]] then
                     TFM.chatMessage(string.format(translate("translatedBy",name), getTranslatorsName(cmd[2], name)), name)
+                    if isAdmin(name) then
+                        adminsInterface(name)
+                    end
                 end
             else
                 TFM.chatMessage("<R>[•] The module doesn't support this language.</R>", name)
